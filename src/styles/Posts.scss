@@ -27,13 +27,15 @@
             &:hover{
                 transform: scale(1.03, 1.03);
             }
-            &>img{
+            .imgcover{
                 width: 100%;
+                aspect-ratio: 16/10;
             } 
             a{
                 display: inline-flex;
                 align-items: center;
                 gap: 5px;
+                color: steelblue;
             }
             .card-author-row{
                 display: grid;
@@ -56,11 +58,27 @@
                 }
                 
             }
+            .text-span p{
+                display: none;
+            }
+            .text-span h2 {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                &+p{
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }}
         }
     }
     
     .post-categories{
+        @include default{
         width: 300px;
+        }
         h2{
             width: 100%;
             margin-top: 0;
@@ -75,6 +93,14 @@
             color: #fff;
             background-color: #667c85;
             border-radius: 4px;
+            cursor: pointer;
         }
     }
+  
+}
+.not-found{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
